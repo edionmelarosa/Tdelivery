@@ -1,0 +1,26 @@
+<template name="CancelOrder">
+	<div class="page-container container" id="content">
+		<div class="row main-page">
+			<div class="col-md-12 col-xs-12">
+				<div class="panel panel-default">
+					<div class="panel-heading"><i class="fa fa-remove"></i> Cancel Order</div>
+					<div class="panel-body">
+						<div class="input-group">
+							<span id="basic-addon1" class="input-group-addon">Order Code:</span>
+							<input type="text" aria-describedby="basic-addon1" class="form-control">
+						</div>
+					</div>
+					<div class="panel-footer">
+						<div class="row">
+							<div class="col-md-12 col-xs-12">
+								<a href="{{pathFor 'home_public'}}" class="btn btn-default pull-left"><i class="fa fa-times-circle"></i> Back</a>
+								<a href="#" class="btn btn-danger pull-right"><i class="fa fa-check"></i> Cancel Now</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>
+

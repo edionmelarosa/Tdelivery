@@ -2,7 +2,21 @@
 	<div class="page-container container" id="content">
 		<div class="row main-page text-center">
 			<h1 class="main-page-title">T-Delivery</h1>
-		 	<a href="{{pathFor 'products'}}" class="btn btn-success">Order Now</a>
+			<!-- <div class="col-md-12 col-xs-12">
+				<a href="{{pathFor 'products'}}" class="btn btn-success">Order Now</a>
+			</div>
+		 	<div class="col-md-12 col-xs-12">
+		 		<a href="{{pathFor 'cancel-order'}}" class="btn btn-warning">Cancel Order</a>
+		 	</div>
+ -->
+		 	<div class="list-group">
+		 		<a href="{{pathFor 'products'}}" class="list-group-item">Order Now</a>
+		 		<a href="{{pathFor 'cancel_order'}}" class="list-group-item">Cancel Order</a>
+				<!-- <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
+				<a href="#" class="list-group-item">Morbi leo risus</a>
+				<a href="#" class="list-group-item">Porta ac consectetur ac</a>
+				<a href="#" class="list-group-item">Vestibulum at eros</a> -->
+			</div>
 		</div>
 	</div>
 </template>
