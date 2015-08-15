@@ -1,5 +1,5 @@
-this.ProductsController = RouteController.extend({
-	template: "Products",
+this.ThankyouController = RouteController.extend({
+	template: "Thankyou",
 
 	yieldTemplates: {
 		/*YIELD_TEMPLATES*/

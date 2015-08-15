@@ -130,6 +130,13 @@ Router.map(function () {
 	this.route("admin.products.edit", {path: "/admin/products/edit/:productId", controller: "AdminProductsEditController"});
 	this.route("cart", {path: "/cart", controller: "CartController"});
 	this.route("location", {path: "/location", controller: "LocationController"});
+	this.route("prduct", {path: "/product", controller: "ProductController"});
+	this.route("thankyou", {path: "/thankyou", controller: "ThankyouController"});
 	this.route("cancel_order", {path: "/cancel-order", controller: "CancelOrderController"});
+<<<<<<< HEAD
 	this.route("product", {path: "/product/:id", controller: "ProductController"});
+=======
+
+
+>>>>>>> 09b1b32b85c5139e8d242a080d4081cd9e864a25
 });
