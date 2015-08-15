@@ -7,7 +7,7 @@ Router.configure({
 });
 
 if(Meteor.isClient) {
-	var publicRoutes = ["home_public", "orders", "products", "vendors"];
+	var publicRoutes = ["home_public", "orders", "products", "vendors", "cart"];
 	var privateRoutes = ["home_private", "admin", "admin.products", "admin.products.details", "admin.products.insert", "admin.products.edit", "orders"];
 	var zonelessRoutes = [];
 
@@ -127,4 +127,5 @@ Router.map(function () {
 	this.route("admin.products.details", {path: "/admin/products/details/:productId", controller: "AdminProductsDetailsController"});
 	this.route("admin.products.insert", {path: "/admin/products/insert", controller: "AdminProductsInsertController"});
 	this.route("admin.products.edit", {path: "/admin/products/edit/:productId", controller: "AdminProductsEditController"});
+	this.route("cart", {path: "/cart", controller: "CartController"});
 });
