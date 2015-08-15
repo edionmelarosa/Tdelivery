@@ -23,7 +23,7 @@ Template.layout.rendered = function() {
 		}
 	}); 
 	/*TEMPLATE_RENDERED_CODE*/
-	$('.filter-list').on('click', '.btn-group a', function(){ 
+	$('.filter-list .btn-group a').on('click', function(){ 
 		var t = $(this);
 		t.siblings().removeClass('btn-primary active');
 		t.addClass('btn-primary active');
