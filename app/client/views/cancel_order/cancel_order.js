@@ -1,8 +1,8 @@
-Template.HomePublic.rendered = function() {
+Template.CancelOrder.rendered = function() {
 	
 };
 
-Template.HomePublic.events({
+Template.CancelOrder.events({
 	"click #page-close-button": function(e, t) {
 		e.preventDefault();
 		Router.go("", {});
@@ -15,22 +15,6 @@ Template.HomePublic.events({
 	
 });
 
-Template.HomePublic.helpers({
-	
-});
-
-Template.HomePublicHomeJumbotron.rendered = function() {
-	
-};
-
-Template.HomePublicHomeJumbotron.events({
-	"click #jumbotron-button": function(e, t) {
-		e.preventDefault();
-		Router.go("", {});
-	}
-	
-});
-
-Template.HomePublicHomeJumbotron.helpers({
+Template.CancelOrder.helpers({
 	
 });

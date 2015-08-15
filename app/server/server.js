@@ -144,3 +144,14 @@ Meteor.startup( function() {
 		{prodID: "012", catId: "104", vendorId: "203", name: "Buchi", desc: "Glutinous rice balls with rich lotus filling. Deep-fried and sprinkled with sesame seeds. Buchi Lotus Cream - 2pcs", img: "http://lutongpinas.com/wp-content/uploads/2012/02/buchi.jpg", price: "39.00"},
 	];
 });
+
+this.insertDummy = function(collection, data, id){
+
+	for (var i = data.length - 1; i >= 0; i--) {
+		var c = collection.find({id: data[i][id]}).count();
+		if ( c === 0) {
+			collection.insert(data[i]);
+		};
+		
+	};
+}

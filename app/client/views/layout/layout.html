@@ -37,12 +37,12 @@
 </template>
 
 <template name="PublicLayoutRightMenu">
-	<!-- <ul id="menu-items" class="nav navbar-nav navbar-right">
+	<ul id="menu-items" class="nav navbar-nav navbar-right">
 		<li id="menu-item-simple">
 			<a href="{{pathFor 'cart'}}">
-				<i class="fa fa-shopping-cart fa-2"> (1)</i>
+				<i class="fa fa-shopping-cart fa-2"> ({{#if cart}} {{cart}} {{/if}})</i>
 			</a>
 		</li>
-	</ul> -->
+	</ul>
 </template>
 
