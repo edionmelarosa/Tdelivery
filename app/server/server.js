@@ -110,3 +110,23 @@ Accounts.onLogin(function (info) {
 Accounts.urls.resetPassword = function (token) {
 	return Meteor.absoluteUrl('reset_password/' + token);
 };
+
+Meteor.startup( function() {
+
+	var prodCat = [
+		{prodCatid: "101", name: "Burger", desc: 'A full half pound lean ground beef patty grilled to order & topped with grilled mushrooms and onions & served on a tasted bun, layered with mayo, lettuce, tomato, and pickle', img: "http://2.bp.blogspot.com/_Uq5nkc25IJA/SfOOEBK0QBI/AAAAAAAAABA/WSbXV0n0N7w/s200/burgers.jpg"},
+		{prodCatid: "102", name: "Popcorn", desc: 'A full half pound lean ground beef patty grilled to order & topped with grilled mushrooms and onions & served on a tasted bun, layered with mayo, lettuce, tomato, and pickle', img: "http://www.moviesatthemarion.com/images/popcorn.jpg"},
+		{prodCatid: "103", name: "Drinks", desc: 'A full half pound lean ground beef patty grilled to order & topped with grilled mushrooms and onions & served on a tasted bun, layered with mayo, lettuce, tomato, and pickle', img: "http://reciclaunicel.com.mx/web/products.nsf/files/BigDrinksUK.jpg/$FILE/BigDrinksUK.jpg"},
+	];
+
+	var products = [
+		{prodID: "12", catId: "101", cat: "", name: "name", desc: "desc", img: "imgpath", price: "58"},
+		{catId: "", name: "name", "desc", img: "imgpath", price: "58"}
+	];
+
+	var vendors = [
+		
+	];
+
+	var vend
+});
