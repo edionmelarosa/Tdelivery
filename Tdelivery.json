@@ -1,0 +1,262 @@
+{
+  "application": {
+    "title": "Tdelivery",
+
+    "roles": [ "admin", "user" ],
+    "default_role": "user",
+    "send_verification_email": true,
+
+    "collections": [
+      {
+        "name": "orders",
+        "name": "products",
+        "name": "vendors"
+      }
+    ],
+
+    "queries": [
+      {
+        "name": "orders",
+        "collection": "orders",
+        "filter": {}
+      },
+      {
+        "name": "order",
+        "collection": "orders",
+        "filter": { "_id": ":orderId" },
+        "find_one": true
+      },
+      {
+        "name": "orders_null",
+        "collection": "orders",
+        "filter": { "_id": null },
+        "find_one": true
+      },
+      {
+        "name": "vendors",
+        "collection": "vendors",
+        "filter": {}
+      },
+      {
+        "name": "vendor",
+        "collection": "vendors",
+        "filter": { "_id": ":vendorId" },
+        "find_one": true
+      },
+      {
+        "name": "vendors_null",
+        "collection": "vendors",
+        "filter": { "_id": null },
+        "find_one": true
+      },
+      {
+        "name": "products",
+        "collection": "products",
+        "filter": {}
+      },
+      {
+        "name": "product",
+        "collection": "products",
+        "filter": { "_id": ":productId" },
+        "find_one": true
+      },
+      {
+        "name": "products_null",
+        "collection": "products",
+        "filter": { "_id": null },
+        "find_one": true
+      }
+      
+    ],
+
+    "public_zone": {
+      "pages": [
+        {
+          "name": "home_public",
+          "title": "",
+          "components": [
+            {
+              "name": "home_jumbotron",
+              "title": "Tdelivery",
+              "type": "jumbotron",
+              "text": "<b>Tdelivery</>."
+            }
+          ]
+        },
+        { "name": "orders", "template": "orders" },
+        { "name": "products", "template": "products" },
+        { "name": "vendors", "template": "vendors" }
+      ],
+
+      "components": [
+        {
+          "name": "left_menu",
+          "type": "menu",
+          "class": "nav navbar-nav",
+          "dest_selector": "#menu",
+          "items": [
+            { "title": "Home", "route": "home_public" }
+          ]
+        },
+
+        {
+          "name": "right_menu",
+          "type": "menu",
+          "class": "nav navbar-nav navbar-right",
+          "dest_selector": "#menu",
+          "items": [
+            { "title": "products", "route": "products" }
+          ]
+        }
+      ]
+    },
+
+    "private_zone": {
+      "pages": [
+        { "name": "home_private", "title": "Welcome {{userFullName}}!" },
+
+
+        {
+          "name": "admin",
+          "roles": ["admin"],
+          "pages": [
+            {
+              "name": "products",
+              "components": [
+                {
+                  "name": "view",
+                  "type": "data_view",
+                  "title": "Products",
+                  "text_if_empty": "No products yet",
+                  "query_name": "orders",
+                  "query_params": [],
+
+                  "fields": [
+                    { "name": "product.name", "title": "Name"},
+                    { "name": "product.info", "title": "Info" },
+                    { "name": "price", "title": "Price" },
+                    { "name": "Category", "title": "Category" }
+                  ],
+
+                  "insert_route": "products.insert",
+
+                  "edit_route": "products.edit",
+                  "edit_route_params": [
+                    { "name": "productId", "value": "this._id" }
+                  ],
+
+                  "details_route": "products.details",
+                  "details_route_params": [
+                    { "name": "productId", "value": "this._id" }
+                  ]
+                }
+              ],
+              "pages": [
+                {
+                  "name": "details",
+                  "route_params": ["productId"],
+                  "components": [
+                    {
+                      "name": "details_form",
+                      "type": "form",
+                      "mode": "read_only",
+                      "title": "Product details",
+                      "query_name": "product",
+                      "query_params": [],
+                      "fields": [
+                        { "name": "product.name", "title": "Name"},
+                        { "name": "product.info", "title": "Info" },
+                        { "name": "price", "title": "Price" },
+                        { "name": "Category", "title": "Category" }
+                      ],
+                      "close_route": "products",
+                      "back_route": "products"
+                    }
+                  ]
+                },
+                {
+                  "name": "insert",
+                  "components": [
+                    {
+                      "name": "insert_form",
+                      "type": "form",
+                      "mode": "insert",
+                      "title": "Add new product",
+                      "submit_route": "products",
+                      "cancel_route": "products",
+                      "query_name": "products_null",
+                      "query_params": [],
+                      "fields": [
+                        { "name": "product.name", "title": "Name", "required": true},
+                        { "name": "product.info", "title": "Info", "required": true },
+                        { "name": "price", "title": "Price", "required": true },
+                        { "name": "Category", "title": "Category", "required": true  }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "edit",
+                  "route_params": ["productId"],
+                  "components": [
+                    {
+                      "name": "edit_form",
+                      "type": "form",
+                      "mode": "update",
+                      "title": "Edit product",
+                      "submit_route": "products",
+                      "cancel_route": "products",
+                      "query_name": "product",
+                      "query_params": [],
+                      "fields": [
+                        { "name": "product.name", "title": "Name", "required": true},
+                        { "name": "product.info", "title": "Info", "required": true },
+                        { "name": "price", "title": "Price", "required": true },
+                        {
+                          "name": "Category",
+                          "type": "array",
+                          "title": "Category",
+                          "input": "radio",
+                          "input_items": [
+                            { "value": "beverages", "title": "Beverages" },
+                            { "value": "common", "title": "Common" }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+
+          ],
+
+          "components": [
+            {
+              "name": "side_menu",
+              "type": "menu",
+              "class": "nav nav-stacked nav-pills",
+              "items": [
+                { "title": "Products", "route": "products" }
+              ]
+            }
+          ]
+        },
+
+        { "name": "orders", "template": "orders" }
+      ],
+
+      "components": [
+        {
+          "name": "left_menu",
+          "type": "menu",
+          "class": "nav navbar-nav",
+          "dest_selector": "#menu",
+          "items": [
+            { "title": "Home", "route": "home_private", "icon_class": "fa fa-home" }
+          ]
+        }
+      ]
+    }
+  }
+}
