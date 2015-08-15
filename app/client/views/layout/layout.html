@@ -10,11 +10,11 @@
 	<div id="wrap">
 		<div class="navbar navbar-fixed-top navbar-default" role="navigation">
 			<div class="navbar-container container">
-				<div class="navbar-header">
+				<!-- <div class="navbar-header">
 					<a class="navbar-brand" href="#">
 						Tdelivery
 					</a>
-				</div>
+				</div> -->
 				<div id="menu">
 					{{> PublicLayoutLeftMenu}}{{> PublicLayoutRightMenu}}
 				</div>
@@ -40,7 +40,7 @@
 	<ul id="menu-items" class="nav navbar-nav navbar-right">
 		<li id="menu-item-simple" class="{{menuItemClass 'products'}}">
 			<a href="{{pathFor 'products'}}">
-				<i>Cart</i>
+				<span>Cart</span>
 			</a>
 		</li>
 	</ul>
