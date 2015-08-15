@@ -8,19 +8,23 @@
 
 <template name="PublicLayout">
 	<div id="wrap">
-		<div class="navbar navbar-fixed-top navbar-default" role="navigation">
+		<div class="navbar navbar-default" role="navigation">
 			<div class="navbar-container container">
-				<!-- <div class="navbar-header">
-					<a class="navbar-brand" href="#">
+				<div class="col-md-9 col-xs-9">
+					<a class="navbar-brand" href="{{pathFor 'categories'}}">
 						Tdelivery
 					</a>
-				</div> -->
-				<div id="menu">
+				</div>
+				<div id="menu" class="col-md-3 col-xs-3">
 					{{> PublicLayoutLeftMenu}}{{> PublicLayoutRightMenu}}
 				</div>
 			</div>
 		</div>
-		<div class="navbar-spacer">
+		<div class="col-md-12 filter-list">
+			<div aria-label="Justified button group" role="group" class="btn-group btn-group-justified">
+				<a class="btn btn-default btn-primary active" href="{{pathFor 'categories'}}">Products</a>
+				<a class="btn btn-default" href="{{pathFor 'vendors'}}">Vendors</a>
+		    </div> 
 		</div>
 		{{> yield}}
 	</div>
@@ -38,9 +42,9 @@
 
 <template name="PublicLayoutRightMenu">
 	<ul id="menu-items" class="nav navbar-nav navbar-right">
-		<li id="menu-item-simple" class="{{menuItemClass 'products'}}">
-			<a href="{{pathFor 'products'}}">
-				<i class="fa fa-shopping-cart fa-2"></i>
+		<li id="menu-item-simple">
+			<a href="{{pathFor 'cart'}}">
+				<i class="fa fa-shopping-cart fa-2"> (1)</i>
 			</a>
 		</li>
 	</ul>

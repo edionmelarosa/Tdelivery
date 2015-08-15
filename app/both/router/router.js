@@ -120,6 +120,7 @@ Router.map(function () {
 	this.route("home_public", {path: "/", controller: "HomePublicController"});
 	this.route("orders", {path: "/orders", controller: "OrdersController"});
 	this.route("products", {path: "/products", controller: "ProductsController"});
+	this.route("categories", {path: "/categories", controller: "CategoriesController"});
 	this.route("vendors", {path: "/vendors", controller: "VendorsController"});
 	this.route("home_private", {path: "/home_private", controller: "HomePrivateController"});
 	this.route("admin", {path: "/admin", controller: "AdminController"});
