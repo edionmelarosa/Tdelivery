@@ -35,7 +35,6 @@ Template.layout.rendered = function() {
 	});
 };
 
-
 Template.PublicLayoutLeftMenu.rendered = function() {
 	$(".menu-item-collapse .dropdown-toggle").each(function() {
 		if($(this).find("li.active")) {
