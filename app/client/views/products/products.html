@@ -12,35 +12,23 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-				
-					<td><img src="https://mcdonalds.com.ph/userfiles/images/ourfood/main/bnt.png" alt="" width="32" height="32"></td>
-					<td style="padding-top:15px;">Big 'n testy</td>
-					<td style="padding-top:15px;">135.00</td>
-
-					<td style="padding-top:15px;"><a href="" class="btn btn-primary"> <i class="">Add to Tray</i></a> </td>
-				</tr>
-				<tr>
-					<td><img src="https://mcdonalds.com.ph/userfiles/images/ourfood/main/BigMac435X320%20(1).png" alt="" width="32" height="32"></td>
-					<td style="padding-top:15px;">Big Mc</td>
-					<td style="padding-top:15px;">158.00</td>
-					<td style="padding-top:15px;"><a href="" class="btn btn-primary"> <i class="">Add to Tray</i></a></td>					
-				</tr>
-				<tr>
-					<td><img src="https://mcdonalds.com.ph/userfiles/images/ourfood/main/filet_o_fish.png" alt="" width="32" height="32"></td>
-					<td style="padding-top:15px;">Filate-O-Fish</td>
-					<td style="padding-top:15px;">151.00</td>
-					<td style="padding-top:15px;"><a href="" class="btn btn-primary"> <i class="">Add to Tray</i></a> </td>					
-				</tr>	
-				<tr>
-					<td><img src="https://mcdonalds.com.ph/userfiles/images/ourfood/main/filet_o_fish.png" alt="" width="32" height="32"></td>
-					<td style="padding-top:15px;">Burger Mcdo</td>
-					<td style="padding-top:15px;">71.00</td>
-					<td><a href="" class="btn btn-primary"> <i class="">Add to Tray</i></a> </td>					
-				</tr>							
+					{{#if products}}
+						{{#each products}}{{> ProductItems}}{{/each}}
+					{{/if}}			
 			</tbody>
 		</table>
 	</div>
 	</div>
 </template>
 
+<template name="ProductItems">
+	<tr>
+				
+	<td><img src="{{img}}" alt="" width="32" height="32"></td>
+		<td style="padding-top:15px;">{{name}}</td>
+		<td style="padding-top:15px;">{{price}}</td>
+
+		<td style="padding-top:15px;"><a href="/product/{{_id}}" class="btn btn-primary btn-add-cart" data-prodId="{{prodId}}"> <i class="">View</i></a> </td>
+	</tr>
+				
+</template>

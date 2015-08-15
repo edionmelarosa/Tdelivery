@@ -1,8 +1,7 @@
-Template.HomePublic.rendered = function() {
-	
+Template.Product.rendered = function() {
 };
 
-Template.HomePublic.events({
+Template.Product.events({
 	"click #page-close-button": function(e, t) {
 		e.preventDefault();
 		Router.go("", {});
@@ -10,27 +9,29 @@ Template.HomePublic.events({
 	"click #page-back-button": function(e, t) {
 		e.preventDefault();
 		Router.go("", {});
-	}
-
-	
-});
-
-Template.HomePublic.helpers({
-	
-});
-
-Template.HomePublicHomeJumbotron.rendered = function() {
-	
-};
-
-Template.HomePublicHomeJumbotron.events({
-	"click #jumbotron-button": function(e, t) {
+	},
+	"submit #prod-form": function(e, t){
 		e.preventDefault();
-		Router.go("", {});
+
+		var prodId = t.find(".prodId").value.trim();
+		var quantity = t.find(".quantity").value.trim();
+
+		Meteor.call('addToCart', {prodId: prodId, quantity: parseInt(quantity)}, function (error, result) {
+			if (error) {
+				console.log(error);
+				return false;
+			}
+
+			getCart();
+			$(".quantity").val("");
+		});
 	}
+
 	
 });
 
-Template.HomePublicHomeJumbotron.helpers({
-	
+Template.Product.helpers({
+	product: function(){
+		return Products.find({}).fetch();
+	}
 });

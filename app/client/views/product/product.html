@@ -1,22 +1,28 @@
 <template name="Product">
 	<div class="page-container container" id="content">
 	<div class="row">
+		{{#each product}}
 		<div class="col-xs-4">
-			<img src="https://mcdonalds.com.ph/userfiles/images/ourfood/main/bnt.png" width="150px" height="150px"> 
+			<img src="{{img}}" width="150px" height="150px"> 
 		</div>
-		<div class="col-xs-8">
-			<h3>Big Mc</h3>
-			<p>Made only from choice ingredients: 100% pure beef patty, fresh tomato, crispy lettuce, onions, pickles, creamy cheese and a special smokey sauce. It has the right mix of tangy and creamy taste and the balance of soft, crunchy and chunky textures in every bite</p>
-			<p>Price : 156.00</p>
-			  <div class="form-group">
-			    <label >Quantity</label>
-			    <input type="number" class="form-control"  placeholder="Select quantity">
-			  </div>
-			  <div class="form-group">
-			    
-			    <input type="submit" class="btn btn-success" data-toggle="modal" data-target=".bs-example-modal-sm" value="Add to Tray">
-			  </div>			  			
-		</div>
+		
+			<div class="col-xs-8">
+				<h3>{{name}}</h3>
+				<p>{{desc}}</p>
+				<p>Price : {{price}}</p>
+				  <form id="prod-form">
+				  	<div class="form-group">
+					    <label >Quantity</label>
+					    <input type="number" class="form-control quantity"  placeholder="Select quantity">
+					    <input type="hidden" class="prodId" value="{{prodId}}">
+					  </div>
+					  <div class="form-group">
+					    
+					    <button type="submit" class="btn btn-success btn-add-cart" data-prodId="{{prodId}}">Add to Tray</button>
+					  </div>
+				  </form>			  			
+			</div>
+		{{/each}}	
 	</div>
 	 
 	</div>

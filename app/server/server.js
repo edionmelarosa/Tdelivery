@@ -113,20 +113,35 @@ Accounts.urls.resetPassword = function (token) {
 
 Meteor.startup( function() {
 
-	var prodCat = [
-		{prodCatid: "101", name: "Burger", desc: 'A full half pound lean ground beef patty grilled to order & topped with grilled mushrooms and onions & served on a tasted bun, layered with mayo, lettuce, tomato, and pickle', img: "http://2.bp.blogspot.com/_Uq5nkc25IJA/SfOOEBK0QBI/AAAAAAAAABA/WSbXV0n0N7w/s200/burgers.jpg"},
-		{prodCatid: "102", name: "Popcorn", desc: 'A full half pound lean ground beef patty grilled to order & topped with grilled mushrooms and onions & served on a tasted bun, layered with mayo, lettuce, tomato, and pickle', img: "http://www.moviesatthemarion.com/images/popcorn.jpg"},
-		{prodCatid: "103", name: "Drinks", desc: 'A full half pound lean ground beef patty grilled to order & topped with grilled mushrooms and onions & served on a tasted bun, layered with mayo, lettuce, tomato, and pickle', img: "http://reciclaunicel.com.mx/web/products.nsf/files/BigDrinksUK.jpg/$FILE/BigDrinksUK.jpg"},
+	var prodCats = [
+		{prodCatId: "101", name: "Burger", img: "http://2.bp.blogspot.com/_Uq5nkc25IJA/SfOOEBK0QBI/AAAAAAAAABA/WSbXV0n0N7w/s200/burgers.jpg"},
+		{prodCatId: "102", name: "Popcorn", img: "http://www.moviesatthemarion.com/images/popcorn.jpg"},
+		{prodCatId: "103", name: "Drinks", img: "http://reciclaunicel.com.mx/web/products.nsf/files/BigDrinksUK.jpg/$FILE/BigDrinksUK.jpg"},
 	];
 
 	var products = [
-		{prodID: "12", catId: "101", cat: "", name: "name", desc: "desc", img: "imgpath", price: "58"},
-		{catId: "", name: "name", "desc", img: "imgpath", price: "58"}
+		{prodId: "1001", prodCatId: "101", name: "name1", desc: "desc", img: "http://2.bp.blogspot.com/_Uq5nkc25IJA/SfOOEBK0QBI/AAAAAAAAABA/WSbXV0n0N7w/s200/burgers.jpg", price: "58"},
+		{prodId: "1002", prodCatId: "101", name: "name2", desc: "desc", img: "http://2.bp.blogspot.com/_Uq5nkc25IJA/SfOOEBK0QBI/AAAAAAAAABA/WSbXV0n0N7w/s200/burgers.jpg", price: "68"},
+		{prodId: "1003", prodCatId: "101", name: "name3", desc: "desc", img: "http://2.bp.blogspot.com/_Uq5nkc25IJA/SfOOEBK0QBI/AAAAAAAAABA/WSbXV0n0N7w/s200/burgers.jpg", price: "78"}
 	];
 
 	var vendors = [
-		
+		{venId: "10001", name: "Mcdo"},
+		{venId: "10002", name: "Jolibee"}
 	];
 
-	var vend
+	insertDummy(Vendors, vendors, "venId");
+	insertDummy(ProductCategories, prodCats, "prodId");
+	insertDummy(Products, products, "prodCatId");
 });
+
+this.insertDummy = function(collection, data, id){
+
+	for (var i = data.length - 1; i >= 0; i--) {
+		var c = collection.find({id: data[i][id]}).count();
+		if ( c === 0) {
+			collection.insert(data[i]);
+		};
+		
+	};
+}

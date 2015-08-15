@@ -33,6 +33,8 @@ Template.layout.rendered = function() {
 		$('.filter-list .btn-group a').removeClass('btn-primary active');
 		$('.filter-list .btn-group a:first-child').addClass('btn-primary active');
 	});
+
+	getCart();
 };
 
 Template.PublicLayoutLeftMenu.rendered = function() {
@@ -74,7 +76,7 @@ Template.PublicLayoutRightMenu.rendered = function() {
 };
 
 Template.PublicLayoutRightMenu.events({
-	
+
 });
 
 Template.PublicLayoutRightMenu.helpers({

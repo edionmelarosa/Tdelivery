@@ -17,6 +17,7 @@ this.ProductController = RouteController.extend({
 
 	isReady: function() {
 		var subs = [
+			Meteor.subscribe('product', this.params.id)
 		];
 		var ready = true;
 		_.each(subs, function(sub) {
