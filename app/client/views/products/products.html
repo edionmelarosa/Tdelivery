@@ -1,59 +1,53 @@
 <template name="Products">
 	<div class="page-container container" id="content">
-		<div class="row product-list">
-			<a href="#">
-				<div class="col-md-4 col-xs-4">
-					<img src="http://2.bp.blogspot.com/_Uq5nkc25IJA/SfOOEBK0QBI/AAAAAAAAABA/WSbXV0n0N7w/s200/burgers.jpg" class="img-responsive product-img">
-				</div>
-				<div class="col-md-8 col-xs-8 product-content">
-					<h3 class="product-title">Burgers</h3>
-					<p class="product-descrp">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus incidunt fugit in libero ducimus corrupti reprehenderit qui officia.</p>
-				</div>
-			</a>
-		</div>
-		<div class="row product-list">
-			<a href="#">
-				<div class="col-md-4 col-xs-4">
-					<img src="http://www.moviesatthemarion.com/images/popcorn.jpg" class="img-responsive product-img">
-				</div>
-				<div class="col-md-8 col-xs-8 product-content">
-					<h3 class="product-title">Popcorn</h3>
-					<p class="product-descrp">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus incidunt fugit in libero ducimus corrupti reprehenderit qui officia.</p>
-				</div>
-			</a>
-		</div>
-		<div class="row product-list">
-			<a href="#">
-				<div class="col-md-4 col-xs-4">
-					<img src="http://reciclaunicel.com.mx/web/products.nsf/files/BigDrinksUK.jpg/$FILE/BigDrinksUK.jpg" class="img-responsive product-img">
-				</div>
-				<div class="col-md-8 col-xs-8 product-content">
-					<h3 class="product-title">Drinks</h3>
-					<p class="product-descrp">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus incidunt fugit in libero ducimus corrupti reprehenderit qui officia.</p>
-				</div>
-			</a>
-		</div>
-		<div class="row product-list">
-			<a href="#">
-				<div class="col-md-4 col-xs-4">
-					<img src="http://smallbites.andybellatti.com/wp-content/uploads/2009/08/potato_chips.jpg" class="img-responsive product-img">
-				</div>
-				<div class="col-md-8 col-xs-8 product-content">
-					<h3 class="product-title">Chips</h3>
-					<p class="product-descrp">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus incidunt fugit in libero ducimus corrupti reprehenderit qui officia.</p>
-				</div>
-			</a>
-		</div>
-		<div class="row product-list">
-			<a href="#">
-				<div class="col-md-4 col-xs-4">
-					<img src="http://images.rapgenius.com/fb7cd7138cc78affe8eb4543094b72f1.606x360x1.jpg" class="img-responsive product-img">
-				</div>
-				<div class="col-md-8 col-xs-8 product-content">
-					<h3 class="product-title">Others</h3>
-					<p class="product-descrp">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus incidunt fugit in libero ducimus corrupti reprehenderit qui officia.</p>
-				</div>
-			</a>
-		</div>
+	<div class="table">
+		<table class="table">
+			<thead>
+				<tr>
+					<td>#</td>
+					<td>Name</td>
+					<td>Price</td>
+					<td>Qty</td>
+					<td>Price</td>
+					<td></td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><img src="https://mcdonalds.com.ph/userfiles/images/ourfood/main/bnt.png" alt="" width="32" height="32"></td>
+					<td style="padding-top:15px;">Big 'n testy</td>
+					<td style="padding-top:15px;">135.00</td>
+					<td style="padding-top:15px;">2</td>
+					<td style="padding-top:15px;">270.00</td>
+					<td style="padding-top:15px;"><a href="" class="btn btn-primary"> <i class="fa fa-plus"></i></a> <a href="" class="btn btn-danger"> <i class="fa fa-minus"></i></a></td>
+				</tr>
+				<tr>
+					<td><img src="https://mcdonalds.com.ph/userfiles/images/ourfood/main/BigMac435X320%20(1).png" alt="" width="32" height="32"></td>
+					<td style="padding-top:15px;">Big Mc</td>
+					<td style="padding-top:15px;">158.00</td>
+					<td style="padding-top:15px;">1</td>
+					<td style="padding-top:15px;">158.00</td>
+					<td style="padding-top:15px;"><a href="" class="btn btn-primary"> <i class="fa fa-plus"></i></a> <a href="" class="btn btn-danger"> <i class="fa fa-minus"></i></a></td>					
+				</tr>
+				<tr>
+					<td><img src="https://mcdonalds.com.ph/userfiles/images/ourfood/main/filet_o_fish.png" alt="" width="32" height="32"></td>
+					<td style="padding-top:15px;">Filate-O-Fish</td>
+					<td style="padding-top:15px;">151.00</td>
+					<td style="padding-top:15px;">3</td>
+					<td style="padding-top:15px;">453.00</td>
+					<td style="padding-top:15px;"><a href="" class="btn btn-primary"> <i class="fa fa-plus"></i></a> <a href="" class="btn btn-danger"> <i class="fa fa-minus"></i></a></td>					
+				</tr>	
+				<tr>
+					<td><img src="https://mcdonalds.com.ph/userfiles/images/ourfood/main/filet_o_fish.png" alt="" width="32" height="32"></td>
+					<td style="padding-top:15px;">Burger Mcdo</td>
+					<td style="padding-top:15px;">71.00</td>
+					<td style="padding-top:15px;">3</td>
+					<td style="padding-top:15px;">213.00</td>
+					<td><a href="" class="btn btn-primary"> <i class="fa fa-plus"></i></a> <a href="" class="btn btn-danger"> <i class="fa fa-minus"></i></a></td>					
+				</tr>							
+			</tbody>
+		</table>
+	</div>
 	</div>
 </template>
+
