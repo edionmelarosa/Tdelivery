@@ -131,4 +131,5 @@ Router.map(function () {
 	this.route("cart", {path: "/cart", controller: "CartController"});
 	this.route("location", {path: "/location", controller: "LocationController"});
 	this.route("prduct", {path: "/product", controller: "ProductController"});
+	this.route("thankyou", {path: "/thankyou", controller: "ThankyouController"});
 });
