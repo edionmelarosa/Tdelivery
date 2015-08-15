@@ -121,7 +121,7 @@ Meteor.startup( function() {
 	];
 
 	var prodVendor = [
-		{prodVendorid: "201", name: 'McDonalds', img: "http://lifestyle.inquirer.net/files/2013/03/mcdo.jpg" class="img-responsive product-img"},
+		{prodVendorid: "201", name: 'McDonalds', img: "http://lifestyle.inquirer.net/files/2013/03/mcdo.jpg"},
 		{prodVendorid: "202", name: 'KFC', img: "http://brickit.com/images/clients/logo_KFC.png"},
 		{prodVendorid: "203", name: 'Chowking', img: "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xaf1/v/t1.0-1/p160x160/306754_448189585213118_445981934_n.jpg?oh=f7dfe3766527450eaa2a7288c0842f0f&oe=567BDB03&__gda__=1447500943_c8c5d4f076537d7c43ca88dbe3c083d3"},
 		{prodVendorid: "203", name: 'Jollibee', img: "http://jollibeefoundation.org/wp-content/themes/jgf/images/jb_logo.gif"},
