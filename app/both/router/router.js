@@ -130,4 +130,5 @@ Router.map(function () {
 	this.route("admin.products.edit", {path: "/admin/products/edit/:productId", controller: "AdminProductsEditController"});
 	this.route("cart", {path: "/cart", controller: "CartController"});
 	this.route("location", {path: "/location", controller: "LocationController"});
+	this.route("prduct", {path: "/product", controller: "ProductController"});
 });
