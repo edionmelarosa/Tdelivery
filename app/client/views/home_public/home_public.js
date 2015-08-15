@@ -73,24 +73,3 @@ Template.HomePublic.events({
 Template.HomePublic.helpers({
 	
 });
-<<<<<<< HEAD
-=======
-
-Template.HomePublicHomeJumbotron.rendered = function() {
-	
-};
-
-Template.HomePublicHomeJumbotron.events({
-	"click #jumbotron-button": function(e, t) {
-		e.preventDefault();
-		Router.go("", {});
-	}
-	
-});
-
-Template.HomePublicHomeJumbotron.helpers({
-	
-});
-
-
->>>>>>> 09b1b32b85c5139e8d242a080d4081cd9e864a25
