@@ -17,6 +17,7 @@ this.CategoriesController = RouteController.extend({
 
 	isReady: function() {
 		var subs = [
+			Meteor.subscribe("product_categories")
 		];
 		var ready = true;
 		_.each(subs, function(sub) {

@@ -113,18 +113,18 @@ Accounts.urls.resetPassword = function (token) {
 
 Meteor.startup( function() {
 
-	var prodCat = [
-		{prodCatid: "101", name: "Burger", img: "http://2.bp.blogspot.com/_Uq5nkc25IJA/SfOOEBK0QBI/AAAAAAAAABA/WSbXV0n0N7w/s200/burgers.jpg"},
-		{prodCatid: "102", name: "Popcorn", img: "http://www.moviesatthemarion.com/images/popcorn.jpg"},
-		{prodCatid: "103", name: "Chips",  img: "http://smallbites.andybellatti.com/wp-content/uploads/2009/08/potato_chips.jpg"},
-		{prodCatid: "104", name: "Others",  img: "http://reciclaunicel.com.mx/web/products.nsf/files/BigDrinksUK.jpg/$FILE/BigDrinksUK.jpg"}
+	var prodCats = [
+		{prodCatId: "101", name: "Burger", img: "http://2.bp.blogspot.com/_Uq5nkc25IJA/SfOOEBK0QBI/AAAAAAAAABA/WSbXV0n0N7w/s200/burgers.jpg", desc: "Made only from choice ingredients: 100% pure beef patty, fresh tomato, crispy lettuce, onions, pickles, creamy cheese and a special smokey sauce. It has the right mix of tangy and creamy taste and the balance of soft, crunchy and chunky textures in every bite."},
+		{prodCatId: "102", name: "Popcorn", img: "http://www.moviesatthemarion.com/images/popcorn.jpg", desc: "Made only from choice ingredients: 100% pure beef patty, fresh tomato, crispy lettuce, onions, pickles, creamy cheese and a special smokey sauce. It has the right mix of tangy and creamy taste and the balance of soft, crunchy and chunky textures in every bite."},
+		{prodCatId: "103", name: "Chips",  img: "http://smallbites.andybellatti.com/wp-content/uploads/2009/08/potato_chips.jpg", desc: "Made only from choice ingredients: 100% pure beef patty, fresh tomato, crispy lettuce, onions, pickles, creamy cheese and a special smokey sauce. It has the right mix of tangy and creamy taste and the balance of soft, crunchy and chunky textures in every bite."},
+		{prodCatId: "104", name: "Others",  img: "http://reciclaunicel.com.mx/web/products.nsf/files/BigDrinksUK.jpg/$FILE/BigDrinksUK.jpg", desc: "Made only from choice ingredients: 100% pure beef patty, fresh tomato, crispy lettuce, onions, pickles, creamy cheese and a special smokey sauce. It has the right mix of tangy and creamy taste and the balance of soft, crunchy and chunky textures in every bite."}
 	];
 
-	var prodVendor = [
-		{prodVendorid: "201", name: 'McDonalds', img: "http://lifestyle.inquirer.net/files/2013/03/mcdo.jpg"},
-		{prodVendorid: "202", name: 'KFC', img: "http://brickit.com/images/clients/logo_KFC.png"},
-		{prodVendorid: "203", name: 'Chowking', img: "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xaf1/v/t1.0-1/p160x160/306754_448189585213118_445981934_n.jpg?oh=f7dfe3766527450eaa2a7288c0842f0f&oe=567BDB03&__gda__=1447500943_c8c5d4f076537d7c43ca88dbe3c083d3"},
-		{prodVendorid: "203", name: 'Jollibee', img: "http://jollibeefoundation.org/wp-content/themes/jgf/images/jb_logo.gif"},
+	var vendors = [
+		{venId: "201", name: 'McDonalds', img: "http://lifestyle.inquirer.net/files/2013/03/mcdo.jpg"},
+		{venId: "202", name: 'KFC', img: "http://brickit.com/images/clients/logo_KFC.png"},
+		{venId: "203", name: 'Chowking', img: "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xaf1/v/t1.0-1/p160x160/306754_448189585213118_445981934_n.jpg?oh=f7dfe3766527450eaa2a7288c0842f0f&oe=567BDB03&__gda__=1447500943_c8c5d4f076537d7c43ca88dbe3c083d3"},
+		{venId: "203", name: 'Jollibee', img: "http://jollibeefoundation.org/wp-content/themes/jgf/images/jb_logo.gif"}
 	];
 
 	var products = [
@@ -141,10 +141,13 @@ Meteor.startup( function() {
 		{prodID: "010", catId: "101", vendorId: "204", name: "Burger with TLC", desc: "Burger with TLC - Solo", img: "http://www.jollibee.com.ph/wp-content/uploads/2014/07/yum-with-tlc.jpg", price: "64.00"},
 
 		{prodID: "011", catId: "104", vendorId: "203", name: "Chunky Asado Siopao", desc: "Siopao Asado can be enjoyed anytime of the day and any day of the week. You can serve this treat for breakfast, lunch , merienda , dinner or even as midnight snack", img: "https://assets.foodpanda.ph/dynamic/images/products/233/233491_1424164264_ma.jpg", price: "36.00"},
-		{prodID: "012", catId: "104", vendorId: "203", name: "Buchi", desc: "Glutinous rice balls with rich lotus filling. Deep-fried and sprinkled with sesame seeds. Buchi Lotus Cream - 2pcs", img: "http://lutongpinas.com/wp-content/uploads/2012/02/buchi.jpg", price: "39.00"},
+		{prodID: "012", catId: "104", vendorId: "203", name: "Buchi", desc: "Glutinous rice balls with rich lotus filling. Deep-fried and sprinkled with sesame seeds. Buchi Lotus Cream - 2pcs", img: "http://lutongpinas.com/wp-content/uploads/2012/02/buchi.jpg", price: "39.00"}
 	];
-});
 
+	insertDummy(Vendors, vendors, "venId");
+	insertDummy(ProductCategories, prodCats, "prodCatId");
+	insertDummy(Products, products, "prodId");
+});
 this.insertDummy = function(collection, data, id){
 
 	for (var i = data.length - 1; i >= 0; i--) {

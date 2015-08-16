@@ -1,63 +1,25 @@
 <template name="Categories">
 	{{> MenuTab}}
 	<div class="page-container container" id="content">
-	    <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>	
-		<div class="row product-list">
-			<a href="{{pathFor 'products'}}">
-				<div class="col-md-4 col-xs-4">
-					<img src="http://2.bp.blogspot.com/_Uq5nkc25IJA/SfOOEBK0QBI/AAAAAAAAABA/WSbXV0n0N7w/s200/burgers.jpg" class="img-responsive product-img">
-				</div>
-				<div class="col-md-8 col-xs-8 product-content">
-					<h3 class="product-title">Burgers</h3>
-					<p class="product-descrp">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus incidunt fugit in libero ducimus corrupti reprehenderit qui officia.</p>
-				</div>
-			</a>
-		</div>
-		<div class="row product-list">
-			<a href="{{pathFor 'products'}}">
-				<div class="col-md-4 col-xs-4">
-					<img src="http://www.moviesatthemarion.com/images/popcorn.jpg" class="img-responsive product-img">
-				</div>
-				<div class="col-md-8 col-xs-8 product-content">
-					<h3 class="product-title">Popcorn</h3>
-					<p class="product-descrp">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus incidunt fugit in libero ducimus corrupti reprehenderit qui officia.</p>
-				</div>
-			</a>
-		</div>
-		<div class="row product-list">
-			<a href="{{pathFor 'products'}}">
-				<div class="col-md-4 col-xs-4">
-					<img src="http://reciclaunicel.com.mx/web/products.nsf/files/BigDrinksUK.jpg/$FILE/BigDrinksUK.jpg" class="img-responsive product-img">
-				</div>
-				<div class="col-md-8 col-xs-8 product-content">
-					<h3 class="product-title">Drinks</h3>
-					<p class="product-descrp">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus incidunt fugit in libero ducimus corrupti reprehenderit qui officia.</p>
-				</div>
-			</a>
-		</div>
-		<div class="row product-list">
-			<a href="{{pathFor 'products'}}">
-				<div class="col-md-4 col-xs-4">
-					<img src="http://smallbites.andybellatti.com/wp-content/uploads/2009/08/potato_chips.jpg" class="img-responsive product-img">
-				</div>
-				<div class="col-md-8 col-xs-8 product-content">
-					<h3 class="product-title">Chips</h3>
-					<p class="product-descrp">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus incidunt fugit in libero ducimus corrupti reprehenderit qui officia.</p>
-				</div>
-			</a>
-		</div>
-		<div class="row product-list">
-			<a href="{{pathFor 'products'}}">
-				<div class="col-md-4 col-xs-4">
-					<img src="http://cdn.potatopro.com/cdn/farfuture/7Dme8H2_Zad2x2iGr-9tE8ihWfdOUn2yEZsmIGBRlco/mtime:1386346605/sites/default/files/field/image/Kurkure_Family.jpg" class="img-responsive product-img" style="padding-top: 20px;">
-				</div>
-				<div class="col-md-8 col-xs-8 product-content">
-					<h3 class="product-title">Others</h3>
-					<p class="product-descrp">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus incidunt fugit in libero ducimus corrupti reprehenderit qui officia.</p>
-				</div>
-			</a>
-		</div>
+	   <form id="search">
+			<div class="form-group">
+	          <input type="text" class="form-control input-search" placeholder="Search">
+	        </div>
+		</form>
+		{{#each prodCats}} {{> prodCategories}} {{/each}}
+	
 	</div>
+</template>
+<template name="prodCategories">
+		<div class="row product-list">
+			<a href="{{pathFor 'products'}}">
+				<div class="col-md-4 col-xs-4">
+					<img src="{{img}}" class="img-responsive product-img" style="padding-top: 20px;">
+				</div>
+				<div class="col-md-8 col-xs-8 product-content">
+					<h3 class="product-title">{{name}}</h3>
+					<p class="product-descrp">{{desc}}</p>
+				</div>
+			</a>
+		</div>
 </template>

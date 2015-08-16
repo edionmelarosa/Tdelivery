@@ -18,44 +18,14 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td><img src="http://www.moviesatthemarion.com/images/popcorn.jpg" class="img-responsive center-block" width="32px;" height="32px"></td>
-						<td style="padding-top:15px;">Waffles</td>
-						<td style="padding-top:15px;">25</td>
-						<td style="padding-top:15px;">1</td>
-						<td style="padding-top:15px;">25</td>
-						<td style="padding-top:15px;"><a href="" class="btn btn-primary"> <i class="fa fa-plus"></i></a> <a href="" class="btn btn-danger"> <i class="fa fa-minus"></i></a></td>
-					</tr>
-					<tr>
-						<td><img src="http://www.moviesatthemarion.com/images/popcorn.jpg" class="img-responsive center-block" width="32px;" height="32px"></td>
-						<td style="padding-top:15px;">Pop Corn</td>
-						<td style="padding-top:15px;">47</td>
-						<td style="padding-top:15px;">2</td>
-						<td style="padding-top:15px;">92</td>
-						<td style="padding-top:15px;"><a href="" class="btn btn-primary"> <i class="fa fa-plus"></i></a> <a href="" class="btn btn-danger"> <i class="fa fa-minus"></i></a></td>						
-					</tr>
-					<tr>
-						<td><img src="http://www.moviesatthemarion.com/images/popcorn.jpg" class="img-responsive center-block" width="32px;" height="32px"></td>
-						<td style="padding-top:15px;">Big Mc</td>
-						<td style="padding-top:15px;">158</td>
-						<td style="padding-top:15px;">1</td>
-						<td style="padding-top:15px;">158</td>
-						<td style="padding-top:15px;"><a href="" class="btn btn-primary"> <i class="fa fa-plus"></i></a> <a href="" class="btn btn-danger"> <i class="fa fa-minus"></i></a></td>
-					</tr>
-					<tr>
-						<td><img src="http://www.moviesatthemarion.com/images/popcorn.jpg" class="img-responsive center-block" width="32px;" height="32px"></td>
-						<td style="padding-top:15px;">Juice</td>
-						<td style="padding-top:15px;">15</td>
-						<td style="padding-top:15px;">2</td>
-						<td style="padding-top:15px;">30</td>
-						<td style="padding-top:15px;"><a href="" class="btn btn-primary"> <i class="fa fa-plus"></i></a> <a href="" class="btn btn-danger"> <i class="fa fa-minus"></i></a></td>
-					</tr>
+					
+					{{#each carts}} {{> CartContent}} {{/each}}
 					<tr>
 						<td></td>
 						<td style="padding-top:15px;"></td>
 						<td style="padding-top:15px;"></td>
 						<td style="padding-top:15px;">Sub Total</td>
-						<td style="padding-top:15px;">900</td>
+						<td style="padding-top:15px;">{{total}}</td>
 						<td style="padding-top:15px;"></td>
 						<td></td>
 					</tr>
@@ -63,8 +33,8 @@
 						<td></td>
 						<td style="padding-top:15px;"></td>
 						<td style="padding-top:15px;"></td>
-						<td style="padding-top:15px;">Charger</td>
-						<td style="padding-top:15px;">40</td>
+						<td style="padding-top:15px;">Charge</td>
+						<td style="padding-top:15px;">30</td>
 						<td></td>
 					</tr>
 					<tr>
@@ -72,8 +42,8 @@
 						<td style="padding-top:15px;"></td>
 						<td style="padding-top:15px;"></td>
 						<td style="padding-top:15px;">Total</td>
-						<td style="padding-top:15px;">940</td>
-						<td><a href="{{pathFor 'location'}}" class="btn btn-success">Next Process</a></td>
+						<td style="padding-top:15px;">{{totalPlusCharge}}</td>
+						<td><a href="" class="btn btn-success btn-checkout">Checkout</a></td>
 					</tr>																														
 				</tbody>				
 			</table>
@@ -85,4 +55,15 @@
 
 		</div>
 	</div>
+</template>
+
+<template name="CartContent">
+	<tr>
+		<td><img src="http://www.moviesatthemarion.com/images/popcorn.jpg" class="img-responsive center-block" width="32px;" height="32px"></td>
+		<td style="padding-top:15px;">{{name}}</td>
+		<td style="padding-top:15px;">{{price}}</td>
+		<td style="padding-top:15px;">{{quan}}</td>
+		<td style="padding-top:15px;">{{total}}</td>
+		<td style="padding-top:15px;"><a href="" class="btn btn-primary"> <i class="fa fa-plus"></i></a> <a href="" class="btn btn-danger"> <i class="fa fa-minus"></i></a></td>
+	</tr>
 </template>

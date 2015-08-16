@@ -1,5 +1,6 @@
 Template.Products.rendered = function() {
-	
+	var products = Products.find({}).fetch();
+	Session.set("products", products);
 };
 
 Template.Products.events({
@@ -17,6 +18,6 @@ Template.Products.events({
 
 Template.Products.helpers({
 	products: function(){
-		return Products.find({}).fetch();
+		return Session.get("products");
 	}
 });
